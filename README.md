@@ -1,10 +1,8 @@
-first step => run </br>
-```php artisan migrate```
+1.```php artisan migrate``` </br>
 
-if you need change migration package </br>
-```php artisan vendor:publish --tag task-migration```
+2.```php artisan vendor:publish --tag task-lang```
 
-second step => you should set your SMTP configuration in .env file, <b> if not set! </b>
+3.step => you should set your SMTP configuration in .env file, <b> if not set! </b>
 ```
 MAIL_MAILER=smtp
 MAIL_HOST=mailpit
@@ -18,21 +16,22 @@ MAIL_FROM_NAME="${APP_NAME}
 
 <hr/>
 
+if you need change migration package </br>
+```php artisan vendor:publish --tag task-migration``` </br>
+
 if you need to change configuration package </br>
 ```php artisan vendor:publish --tag task-config```
 
-if you need to change test errors and successes in api message </br>
-```php artisan vendor:publish --tag task-lang```
-
-if you need change access logged-in user to all todo package routes </br>
-Just create your <ins>custom middleware</ins> and add it to the ```middleware key``` in config package file </br>
+if you need <ins>change access logged-in</ins> user to all todo package routes Just create your <ins>custom middleware</ins> and </br> 
+add it to the ```middleware key``` in config package file </br>
 
 <hr/>
 
 if you need run manually schedule you can run </br>
 ```php artisan schedule:tasks```
 
-If you run ```php artisan schedule:list``` you can see the scheduling tasks </br>
+you can see the scheduling tasks by run </br>
+```php artisan schedule:list```
 
 <hr/>
 
