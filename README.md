@@ -2,7 +2,7 @@
 
 2.```php artisan vendor:publish --tag task-lang```
 
-3.you should set your SMTP configuration in .env file, <b> if not set! </b>
+3.you should set your `SMTP` configuration in .env file, <b> if not set! </b>
 ```
 MAIL_MAILER=smtp
 MAIL_HOST=mailpit
