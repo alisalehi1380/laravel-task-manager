@@ -1,26 +1,38 @@
-```php artisan migrate --seed```
+first step => run </br>
+```php artisan migrate```
+
+if you need change migration package </br>
+```php artisan vendor:publish --tag task-migration```
+
+second step => you should set your SMTP configuration in .env file, <b> if not set! </b>
+```
+MAIL_MAILER=smtp
+MAIL_HOST=mailpit
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}
+```
 
 <hr/>
 
 if you need to change configuration package </br>
 ```php artisan vendor:publish --tag task-config```
 
-if you need change migration package </br>
-```php artisan vendor:publish --tag task-migration```
+if you need to change test errors and successes in api message </br>
+```php artisan vendor:publish --tag task-lang```
 
 if you need change access logged-in user to all todo package routes </br>
-``` Just create your custom middleware and add it to the middleware key in config package file``` </br>
-
-![image](https://github.com/alisalehi1380/todo-package/assets/111766206/feab48d8-bfe0-49fe-aad1-a187c187ff8c)
+Just create your <ins>custom middleware</ins> and add it to the ```middleware key``` in config package file </br>
 
 <hr/>
 
-if you want run a manually schedule you can run </br>
-``` php artisan schedule:tasks ```
+if you need run manually schedule you can run </br>
+```php artisan schedule:tasks```
 
-If you run ``` php artisan schedule:list ``` you can see the scheduling tasks </br>
-
-![image](https://github.com/alisalehi1380/todo-package/assets/111766206/c1252d85-9cc5-44b0-bb6f-5f49fcfca701)
+If you run ```php artisan schedule:list``` you can see the scheduling tasks </br>
 
 <hr/>
 
