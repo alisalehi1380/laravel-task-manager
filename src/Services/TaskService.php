@@ -89,7 +89,7 @@ class TaskService
         return $this->taskRepository->all();
     }
     
-    private function checkAccess(Task $task): bool1
+    private function checkAccess(Task $task): bool
     {
         return Auth::user()->getKey() === $task->{Task::USER_ID};
     }
