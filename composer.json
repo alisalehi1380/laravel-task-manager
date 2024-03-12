@@ -1,11 +1,11 @@
 {
-  "name": "alisalehi/laravel-todo",
-  "description": "easiest way to translate lang files to another language in laravel",
+  "name": "alisalehi/laravel-task-manager",
+  "description": "easiest way to manage task in laravel",
   "keywords": [
-    "laravel lang files translator",
-    "laravel translator"
+    "laravel task manager package",
+    "laravel task manager"
   ],
-  "homepage": "https://github.com/alisalehi1380/laravel-lang-files-translator",
+  "homepage": "https://github.com/alisalehi1380/laravel-task-manager",
   "license": "MIT",
   "authors": [
     {
@@ -14,24 +14,20 @@
     }
   ],
   "require": {
-    "php": ">=8.0",
-    "stichoza/google-translate-php": "^5.1",
+    "php": ">=8.1",
     "laravel/framework": "9.*|10.*"
   },
   "autoload": {
     "psr-4": {
-      "Alisalehi\\LaravelLangFilesTranslator\\": "src/"
+      "AliSalehi\\Task\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Alisalehi\\LaravelLangFilesTranslator\\LangFilesTranslatorServiceProvider"
+        "AliSalehi\\Task\\TaskServiceProvider"
       ]
     }
   },
-  "require-dev": {
-    "phpunit/phpunit": "^10.4"
-  },
-  "minimum-stability": "stable"
+  "minimum-stability": "dev"
 }
