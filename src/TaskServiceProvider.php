@@ -19,7 +19,6 @@ class TaskServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFile();
         $this->repositoryBinding();
-//        Gate::policy(Task::class, TaskPolicy::class);
         $this->app['router']->aliasMiddleware('task-middleware', config('task.middleware', TaskMiddleware::class));
     }
     
@@ -29,8 +28,9 @@ class TaskServiceProvider extends ServiceProvider
         $this->initCommands();
         $this->configurePublishing();
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__ .'/../lang', 'TASK');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'NDP');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     }
     
     private function repositoryBinding(): void
@@ -61,6 +61,9 @@ class TaskServiceProvider extends ServiceProvider
             );
             $this->publishes(
                 [__DIR__ . '/../database/migrations' => database_path('/migrations')], ['task', 'task-migration']
+            );
+            $this->publishes(
+                [__DIR__ . '/../lang/en' => lang_path('/en')], ['task', 'task-lang']
             );
         }
     }
