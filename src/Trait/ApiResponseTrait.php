@@ -19,7 +19,7 @@ trait ApiResponseTrait
     public function errorResponse(array|string $errors, string $errorMessages = '', int $status = Response::HTTP_INTERNAL_SERVER_ERROR): JsonResponse
     {
         return response()->json([
-            'status'  => false,
+            'status'  => $status,
             'message' => $errorMessages,
             'errors'  => $errors
         ], $status);
