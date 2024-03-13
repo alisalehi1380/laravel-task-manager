@@ -1,6 +1,6 @@
 {
   "name": "alisalehi/laravel-task-manager",
-  "description": "easiest way to manage task in laravel",
+  "description": "for manage task in laravel",
   "keywords": [
     "laravel task manager package",
     "laravel task manager"
@@ -29,5 +29,17 @@
       ]
     }
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "require-dev": {
+    "orchestra/testbench": "^8.22",
+    "phpunit/phpunit": "^10.5"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AliSalehi\\Task\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit tests/BaseTest.php"
+  }
 }
