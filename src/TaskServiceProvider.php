@@ -57,13 +57,13 @@ class TaskServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes(
-                [__DIR__ . '/../config' => config_path('/')], ['task', 'task-config']
+                [__DIR__ . '/../config' => config_path('/')], ['task-config']
             );
             $this->publishes(
-                [__DIR__ . '/../database/migrations' => database_path('/migrations')], ['task', 'task-migration']
+                [__DIR__ . '/../database/migrations' => database_path('/migrations')], ['task-migration']
             );
             $this->publishes(
-                [__DIR__ . '/../lang/en' => lang_path('/en')], ['task', 'task-lang']
+                [__DIR__ . '/../lang/en' => lang_path('/en')], ['task-lang']
             );
         }
     }
