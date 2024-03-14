@@ -45,7 +45,7 @@ class TaskService
     
     public function store(StoreRequest $request): JsonResponse
     {
-        $this->taskRepository->create($request->all());
+        $this->taskRepository->create($request->validated());
         return $this->successResponse([], config('TASK::task.success.store'));
     }
     
@@ -53,7 +53,7 @@ class TaskService
     {
         if ($this->checkAccess($task)) {
             try {
-                $this->taskRepository->update($task, $request->all());
+                $this->taskRepository->update($task, $request->validated());
                 return $this->successResponse([], config('TASK::task.success.update'));
             } catch (ModelNotFoundException $e) {
                 return $this->errorResponse([], config('TASK::task.success.update'), Response::HTTP_NOT_FOUND);
