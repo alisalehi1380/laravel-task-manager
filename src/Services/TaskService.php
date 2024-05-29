@@ -37,16 +37,16 @@ class TaskService
                 $data = TaskResource::make($this->taskRepository->find($task));
                 return $this->successResponse($data);
             } catch (ModelNotFoundException $e) {
-                return $this->errorResponse([], trans('TASK::task.success.store'), Response::HTTP_NOT_FOUND);
+                return $this->errorResponse([], __('TASK::task.success.store'), Response::HTTP_NOT_FOUND);
             }
         }
-        return $this->errorResponse([], trans('TASK::task.error.access_denied'), Response::HTTP_FORBIDDEN);
+        return $this->errorResponse([], __('TASK::task.error.access_denied'), Response::HTTP_FORBIDDEN);
     }
     
     public function store(StoreRequest $request): JsonResponse
     {
         $this->taskRepository->create($request->validated());
-        return $this->successResponse([], config('TASK::task.success.store'));
+        return $this->successResponse([], __('TASK::task.success.store'));
     }
     
     public function update(Task $task, StoreRequest $request): JsonResponse
@@ -54,12 +54,12 @@ class TaskService
         if ($this->checkAccess($task)) {
             try {
                 $this->taskRepository->update($task, $request->validated());
-                return $this->successResponse([], config('TASK::task.success.update'));
+                return $this->successResponse([], __('TASK::task.success.update'));
             } catch (ModelNotFoundException $e) {
-                return $this->errorResponse([], config('TASK::task.success.update'), Response::HTTP_NOT_FOUND);
+                return $this->errorResponse([], __('TASK::task.success.update'), Response::HTTP_NOT_FOUND);
             }
         }
-        return $this->errorResponse([], config('TASK::task.error.access_denied'), Response::HTTP_FORBIDDEN);
+        return $this->errorResponse([], __('TASK::task.error.access_denied'), Response::HTTP_FORBIDDEN);
     }
     
     public function destroy(Task $task): JsonResponse
@@ -68,12 +68,12 @@ class TaskService
             
             try {
                 $this->taskRepository->delete($task);
-                return $this->successResponse([], config('TASK::task.success.delete'));
+                return $this->successResponse([], __('TASK::task.success.delete'));
             } catch (ModelNotFoundException $e) {
-                return $this->errorResponse([], config('TASK::task.error.delete'), Response::HTTP_NOT_FOUND);
+                return $this->errorResponse([], __('TASK::task.error.delete'), Response::HTTP_NOT_FOUND);
             }
         }
-        return $this->errorResponse([], config('TASK::task.error.access_denied'), Response::HTTP_FORBIDDEN);
+        return $this->errorResponse([], __('TASK::task.error.access_denied'), Response::HTTP_FORBIDDEN);
     }
     
     private function getFilteredTasks(Request $request)
