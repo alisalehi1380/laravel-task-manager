@@ -1,5 +1,9 @@
 ![laravel-task-manager](https://github.com/alisalehi1380/laravel-task-manager/assets/111766206/fcc699b8-59b1-447f-a655-865e68cd6d82)
 
+[![PHP Version Require][ico-php]][link-packagist]
+[![Required Laravel Version][ico-laravel]][link-packagist]
+[![Total Downloads][ico-downloads]][link-packagist]
+[![License][ico-license]][link-packagist]
 <hr/>
 
 ```
@@ -59,4 +63,8 @@ you can try API endpoints by Postman </br>
 https://blue-zodiac-200960.postman.co/workspace/My-Workspace~84f76d8a-4d7d-459a-884d-38d9ae200c34/collection/25647836-05067e13-61e3-4b16-b151-998a65ac80b6?action=share&creator=25647836
 
 
-
+[ico-laravel]: https://img.shields.io/packagist/dependency-v/alisalehi/laravel-task-manager/laravel/framework.svg?color=%23f13c2f
+[ico-php]: https://img.shields.io/packagist/dependency-v/alisalehi/laravel-task-manager/php.svg?
+[link-packagist]: https://packagist.org/packages/alisalehi/laravel-task-manager
+[ico-license]: https://img.shields.io/packagist/l/alisalehi/laravel-task-manager.svg?
+[ico-downloads]: https://img.shields.io/packagist/dt/alisalehi/laravel-task-manager.svg?color=brightgreen
